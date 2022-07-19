@@ -7,6 +7,8 @@ const app = express();
 
 // 라우팅
 const home = require("./src/routes/home");
+app.use(express.static('${__dirname}/src/public'));
+//정적 경로 추가 / public/js/home/login.js를 정적
 app.use("/", home); // use -> 미들웨어를 등록해주는 메서드
 
 // 앱세팅
