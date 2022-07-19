@@ -1,14 +1,23 @@
 "use strict";
 
-const home = (req, res) => {
-    res.render("home/index");
+const output = {
+    home : (req, res) => {
+        res.render("home/index");
+    },
+    //function과 같다.
+    login : (req, res) => {
+        res.render("home/login");
+    },
 };
-//function과 같다.
-const login = (req, res) => {
-    res.render("home/login");
-};
+
+const process = {
+    login : (req, res) => {
+        console.log(req.body);
+    }
+}
+
 //에크마스크립트 문법 hello = hello;
 module.exports = {
-    home,
-    login,
+    output,
+    process
 };
